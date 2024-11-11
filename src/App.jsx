@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import Login from './components/Login'
 import './App.css'
+import Inicio from './components/Inicio'
 
 function App() {
 
   return (
     <>
-      Hola
+      <Inicio/>
     </>
   )
 }
