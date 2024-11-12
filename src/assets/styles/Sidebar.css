@@ -1,0 +1,89 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: relative; /* Para posicionar el contenido dentro del sidebar */
+
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.expanded {
+  width: 250px;
+}
+
+.toggle-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  display: flex;
+  width: 30%;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  max-width: 90%;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Texto del nav-item */
+.nav-item span {
+  opacity: 0;
+  transform: translateX(-20px); /* Desplaza el texto hacia la izquierda */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  left: 60px; /* Posiciona el texto al lado del icono */
+  white-space: nowrap;
+}
+
+/* Efecto de aparición del texto cuando el sidebar está expandido */
+.sidebar.expanded .nav-item span {
+  opacity: 1;
+  transform: translateX(0); /* Vuelve el texto a su posición original */
+}
+
+.nav-item:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.nav-item span {
+  transition: opacity 0.3s;
+}
+
+.nav-leave {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin: 0 auto; /* Centra el botón horizontalmente */
+}
