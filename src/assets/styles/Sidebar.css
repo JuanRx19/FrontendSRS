@@ -87,3 +87,7 @@
   margin-bottom: 20px;
   margin: 0 auto; /* Centra el botón horizontalmente */
 }
+
+.nav-leave .dropdown-toggle::after {
+  display: none;
+}
