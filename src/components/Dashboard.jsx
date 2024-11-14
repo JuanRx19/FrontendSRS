@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import Sidebar from "./SideBar.jsx";
 import { useState } from "react";
+import {Toaster, toast} from 'sonner';
 
 const Dashboard = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -89,7 +90,7 @@ const Dashboard = () => {
                 <Card.Title>Top Customers</Card.Title>
                 <ListGroup variant="flush">
                   <ListGroup.Item>
-                    #0034 - Premium - $4,395.00 <Button variant="primary" size="sm" className="float-end">New Order</Button>
+                    #0034 - Premium - $4,395.00 <Button variant="primary" size="sm" className="float-end" onClick={() => {toast.error('Terminos aceptados')}}>New Order</Button>
                   </ListGroup.Item>
                   <ListGroup.Item>
                     #0089 - Premium - $1,095.00 <Button variant="primary" size="sm" className="float-end">On Delivery</Button>
@@ -136,6 +137,7 @@ const Dashboard = () => {
             </Col>
           </Row>
         </Col>
+        <Toaster theme="dark" position="bottom-center"/>
     </Container>
   );
 };
