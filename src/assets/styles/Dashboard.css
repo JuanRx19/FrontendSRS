@@ -2,22 +2,6 @@
   display: flex;
 }
 
-.sidebar-container {
-  background-color: #1e1e2f;
-  color: white;
-  height: 100vh;
-  transition: width 0.3s;
-  overflow: hidden;
-}
-
-.sidebar-container.collapsed {
-  width: 80px;
-}
-
-.sidebar-container.expanded {
-  width: 250px;
-}
-
 .main-content {
   flex-grow: 1;
   padding: 30px; /* Opcional: Padding interno para el contenido */
