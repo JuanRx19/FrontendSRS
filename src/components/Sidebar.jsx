@@ -1,7 +1,10 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Sidebar.css"; // Archivo CSS adicional
+import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ onToggleSidebar }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -19,12 +22,16 @@ const Sidebar = ({ onToggleSidebar }) => {
 
       <div className="nav-items">
         <div className="nav-item">
-          <FontAwesomeIcon icon={faHome} />
-          {isExpanded && <span>Inicio</span>}
+          <Link to="/" className="link-no-style">
+            <FontAwesomeIcon icon={faHome} />
+            {isExpanded && <span>Inicio</span>}
+          </Link>
         </div>
         <div className="nav-item">
-          <FontAwesomeIcon icon={faBoxArchive} />
-          {isExpanded && <span>Inventario</span>}
+          <Link to="/Login" className="link-no-style">
+            <FontAwesomeIcon icon={faBoxArchive} />
+            {isExpanded && <span>Inventario</span>}
+          </Link>
         </div>
         <div className="nav-item">
           <FontAwesomeIcon icon={faUser} />
@@ -37,12 +44,21 @@ const Sidebar = ({ onToggleSidebar }) => {
       </div>
 
       <div className="nav-leave">
-        <div className="nav-leave-item">
-          <FontAwesomeIcon icon={faCog} />
-        </div>
+        <DropdownButton
+          as={ButtonGroup}
+          title={<FontAwesomeIcon icon={faCog} style={{ color: 'white', fontSize: '1.5rem'}} />}
+          id="bg-nested-dropdown"
+          variant="none"
+        >
+        <Dropdown.Item>Salir</Dropdown.Item>
+      </DropdownButton>
       </div>
+      
     </div>
   );
+};
+Sidebar.propTypes = {
+  onToggleSidebar: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
