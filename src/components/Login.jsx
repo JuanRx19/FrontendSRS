@@ -74,7 +74,7 @@ const Login = () => {
               <h4 className="mt-1 mb-5 pb-1">Bienvenido a SRS</h4>
             </div>
 
-            <p>Por favor ingresa tu cuenta</p>
+            <p>Por favor, ingresa a tu cuenta</p>
 
 
             <MDBInput wrapperClass='mb-4' label='Usuario' id='form1' type='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -89,7 +89,7 @@ const Login = () => {
             <div className="d-flex flex-row align-items-center justify-content-center pb-4 mb-4">
               <p className="mb-0">¿No tienes cuenta?</p>
               <MDBBtn outline className='mx-2' color='danger'>
-                Cree una
+                Crea una
               </MDBBtn>
             </div>
 
@@ -101,8 +101,8 @@ const Login = () => {
           <div className="d-flex flex-column justify-content-center gradient-custom-2 h-100 mb-4">
 
             <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-              <h4 className="mb-4">Somos mas que una compañia</h4>
-              <p className="small mb-0">Nos especializamos en la creacion de sistemas que manejen recursos de manera inteligente para poder satisfacer la alta demanda de robots y drones en áreas específicas.
+              <h4 className="mb-4">Somos más que una compañia</h4>
+              <p className="small mb-0">Nos especializamos en la creación de sistemas que manejen recursos de manera inteligente para poder satisfacer la alta demanda de robots y drones en áreas específicas.
               </p>
             </div>
 
