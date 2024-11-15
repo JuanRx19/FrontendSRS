@@ -21,22 +21,25 @@ const Sidebar = ({ onToggleSidebar }) => {
       </div>
 
       <div className="nav-items">
-        <div className="nav-item">
-          <Link to="/" className="link-no-style">
+        <Link to="/Inicio" className="link-no-style">
+          <div className="nav-item">
             <FontAwesomeIcon icon={faHome} />
             {isExpanded && <span>Inicio</span>}
-          </Link>
-        </div>
-        <div className="nav-item">
-          <Link to="/Login" className="link-no-style">
+          </div>
+        </Link>
+        <Link to="/Inventario" className="link-no-style">
+          <div className="nav-item">
+          
             <FontAwesomeIcon icon={faBoxArchive} />
             {isExpanded && <span>Inventario</span>}
-          </Link>
-        </div>
-        <div className="nav-item">
-          <FontAwesomeIcon icon={faUser} />
-          {isExpanded && <span>Usuarios</span>}
-        </div>
+          </div>
+        </Link>
+        <Link to="/Usuarios" className="link-no-style">
+          <div className="nav-item">
+            <FontAwesomeIcon icon={faUser} />
+            {isExpanded && <span>Usuarios</span>}
+          </div>
+        </Link>
         <div className="nav-item">
           <FontAwesomeIcon icon={faCog} />
           {isExpanded && <span>Configuracion</span>}

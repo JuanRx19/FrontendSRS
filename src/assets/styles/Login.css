@@ -9,10 +9,6 @@
   background: linear-gradient(to right, #1e5d88, #164970, #0f3459, #102544);
   
 }
-
-.card{
-  background-color: white;
-}
 @media (min-width: 768px) {
   .gradient-form {
     height: 100% !important;

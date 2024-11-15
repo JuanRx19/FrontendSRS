@@ -2,21 +2,20 @@ import Login from './components/Login'
 import './App.css'
 import Inicio from './components/Inicio'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from './components/Dashboard'
+import Inventario from './components/Inventario';
+import Usuarios from './components/Usuarios';
 
 function App() {
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />}/>
+        <Route path="/Inicio" element={<Inicio contentComponent={Login} nameComponent={'Inicio'}/>}/>
+        <Route path="/Inventario" element={<Inicio contentComponent={Inventario} nameComponent={'Inventario'}/>}/>
+        <Route path="/Usuarios" element={<Inicio contentComponent={Usuarios} nameComponent={'Usuarios'}/>}/>
       </Routes>
-    </Router>
-        <Route path="/" element={<Inicio />}/>
-        <Route path="/Dashboard" element={<Dashboard />}/>
-      </Routes>
-    </Router>
+      </Router>
   );
 }
 

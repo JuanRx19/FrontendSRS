@@ -7,7 +7,7 @@ import {
   MDBInput
 }
 from 'mdb-react-ui-kit';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import axios from 'axios';
