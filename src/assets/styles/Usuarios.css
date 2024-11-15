@@ -1,0 +1,38 @@
+.custom-text-field .MuiOutlinedInput-root {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.custom-text-field .MuiOutlinedInput-root fieldset {
+  border-color: #1976d2; /* Color del borde normal */
+}
+
+.custom-text-field .MuiOutlinedInput-root:hover fieldset {
+  border-color: #64b5f6; /* Color del borde al pasar el mouse */
+}
+
+.custom-text-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #2196f3; /* Color del borde cuando está enfocado */
+}
+
+.custom-text-field .MuiInputLabel-root {
+  color: #1976d2; /* Color del label */
+}
+
+.custom-text-field .MuiInputLabel-root.Mui-focused {
+  color: #2196f3; /* Color del label cuando está enfocado */
+}
+
+.custom-text-field .MuiOutlinedInput-input {
+  color: #000000; /* Color del texto en el campo */
+}
+
+.header-tabla {
+  display: flex;
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-bottom: 1rem; /* Agrega separación debajo del contenedor */
+}
+
+.custom-text-field {
+  margin-right: 1rem; /* Separación del botón */
+}
