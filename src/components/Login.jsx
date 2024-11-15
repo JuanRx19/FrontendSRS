@@ -102,7 +102,7 @@ const Login = () => {
 
             <div className="text-white px-3 py-4 p-md-5 mx-md-4">
               <h4 className="mb-4">Somos mas que una compañia</h4>
-              <p className="small mb-0">Nos especializamos en la creacion de sistemas que manejen recursos de manera inteligente para poder satisfacer la alta demanda de robots y drones en areas especificas.
+              <p className="small mb-0">Nos especializamos en la creacion de sistemas que manejen recursos de manera inteligente para poder satisfacer la alta demanda de robots y drones en áreas específicas.
               </p>
             </div>
 
