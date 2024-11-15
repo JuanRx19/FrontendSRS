@@ -1,3 +1,12 @@
 .contenedor-inicio {
   background-color: #EEEEEE;
 }
+
+.dashboard-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px; /* Opcional: Padding interno para el contenido */
+}
