@@ -4,11 +4,13 @@ import Inicio from './components/Inicio'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Inventario from './components/Inventario';
 import Usuarios from './components/Usuarios';
+import Alertas from './components/Alertas';
 
 function App() {
 
   return (
-    <Router>
+      <Router>
+      <Alertas />
       <Routes>
         <Route path="/" element={<Login />}/>
         <Route path="/Inicio" element={<Inicio contentComponent={Login} nameComponent={'Inicio'}/>}/>
