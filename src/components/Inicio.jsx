@@ -59,7 +59,7 @@ const Inicio = ({ contentComponent: ContentComponent, nameComponent: NameCompone
         <Col className={`main-content ${isSidebarExpanded ? "content-expanded" : "content-collapsed"} h-100 overflow-auto`}>
           {/* Header */}
           <Row className="mb-4">
-            <Col>
+            <Col className="header-col">
               <h2>{NameComponent}</h2>
               <p>{currentDateTime}</p>
             </Col>
@@ -72,6 +72,7 @@ const Inicio = ({ contentComponent: ContentComponent, nameComponent: NameCompone
               />
             </Col>
           </Row>
+
 
           {/* Content */}
           {ContentComponent ? <ContentComponent /> : <p>No hay ningún elemento</p>}

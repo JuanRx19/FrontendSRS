@@ -1,5 +1,24 @@
 .contenedor-inicio {
-  background-color: #EEEEEE;
+  background-color: #1e1e2f;
+  
+}
+
+.header-col {
+  color: #ffffff; /* Cambia este color al que desees */
+}
+
+.header-col h2 {
+  margin-bottom: 0.5rem; /* Opcional: Ajusta el espaciado */
+}
+
+.header-col p {
+  font-size: 0.9rem; /* Opcional: Cambia el tamaño del texto */
+  color: #cccccc; /* Diferente tono para el párrafo */
+}
+
+.text-end span {
+  font-size: 0.9rem; /* Opcional: Cambia el tamaño del texto */
+  color: #ffffff; /* Diferente tono para el párrafo */
 }
 
 .dashboard-container {

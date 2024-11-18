@@ -1,11 +1,28 @@
 import "../assets/styles/WeatherDashboard.css";
 import React, { useEffect, useState } from 'react';
 
-
 const WeatherDashboard = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [localTime, setLocalTime] = useState(new Date());
+
+  useEffect(() => {
+    if (weatherData) {
+      const localTimeString = weatherData.location.localtime;
+      const initialTime = new Date(localTimeString);
+
+      const timer = setInterval(() => {
+        setLocalTime((prevTime) => new Date(prevTime.getTime() + 1000)); // Avanza 1 segundo
+      }, 1000);
+
+      setLocalTime(initialTime);
+
+      return () => clearInterval(timer); 
+    }
+  }, [weatherData]);
+
+  
   const API_KEY = "ee72b79671ad48a18a7233800241711";
   const CITY = "Cali";
 
@@ -25,7 +42,7 @@ const WeatherDashboard = () => {
     };
   
     fetchWeather();
-  }, []); // Asegúrate de incluir un array vacío para evitar bucles infinitos
+  }, []);
   
   if (loading) {
     return <div className="weather-dashboard-container">Cargando datos meteorológicos...</div>;
@@ -35,32 +52,42 @@ const WeatherDashboard = () => {
     return <div className="weather-dashboard-container">Error al cargar los datos.</div>;
   }
 
-  // Extraer datos necesarios de la API
   const { location, current, forecast } = weatherData;
 
   return (
     <div className="weather-dashboard-container">
       
-      <div className="main-info">
-        <div className="location-time">
-          <h2>{location.name}</h2>
-          <p>{new Date(location.localtime).toLocaleTimeString()}</p>
-          <p>{new Date(location.localtime).toLocaleDateString()}</p>
+      <section className="main-info">
+
+      <div className="location-widget">
+        <h1>{weatherData.location.name}</h1>
+        <p>{localTime.toLocaleTimeString()}</p> 
+        <p>{localTime.toLocaleDateString()}</p> 
+      </div>
+
+
+      <div className="middle-widget">
+        <img
+          src={`https:${weatherData.current.condition.icon}`} 
+          alt={weatherData.current.condition.text} 
+        />
+      </div>
+
+
+      <div className="weather-widget">
+        <h2>{weatherData.current.temp_c}°C</h2>
+        <p>Sensasión térmica: {weatherData.current.feelslike_c}°C</p>
+        <div className="weather-details">
+          <p>Humedad: {weatherData.current.humidity}%</p>
+          <p>Velocidad del viento: {weatherData.current.wind_kph} km/h</p>
+          <p>Presión: {weatherData.current.pressure_mb} hPa</p>
         </div>
-        <div className="weather-info">
-          <h1>{current.temp_c}°C</h1>
-          <p>Sensasión térmica: {current.feelslike_c}°C</p>
-          <div className="details">
-            <p>Humedad: {current.humidity}%</p>
-            <p>Velocidad del viento: {current.wind_kph} km/h</p>
-            <p>Presión: {current.pressure_mb} hPa</p>
-          </div>
-          <div className="sun-info">
-            <p>Amanecer: {forecast.forecastday[0].astro.sunrise}</p>
-            <p>Atardecer: {forecast.forecastday[0].astro.sunset}</p>
-          </div>
+        <div className="sun-times">
+          <p>Amanecer: {weatherData.forecast.forecastday[0].astro.sunrise}</p>
+          <p>Atardecer: {weatherData.forecast.forecastday[0].astro.sunset}</p>
         </div>
       </div>
+    </section>
 
       <div className="forecast">
         <div className="five-day-forecast">
