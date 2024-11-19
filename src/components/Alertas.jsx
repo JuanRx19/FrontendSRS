@@ -6,17 +6,24 @@ function Alertas() {
     const [alertas, setAlertas] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/alertas/notificaciones')
-            .then(response => setAlertas(response.data))
-            .catch(error => console.error('Error fetching alerts:', error));
+        const obtenerAlertas = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/alertas/notificaciones');
+                setAlertas(response.data);
+            } catch (error) {
+                console.error('Error al obtener alertas:', error);
+            }
+        };
+        obtenerAlertas();
     }, []);
 
     return (
-        <div className="alert-container">
+        <div className="container mt-4">
             <h3>Alertas Críticas</h3>
-            {alertas.map((alerta, index) => (
-                <div key={index} className={`alert alert-${alerta.criticidad.toLowerCase()}`}>
-                    {alerta.mensaje}
+            {alertas.map((alerta) => (
+                <div key={alerta.id} className={`alert alert-${alerta.criticidad.toLowerCase()}`}>
+                    <strong>{alerta.mensaje}</strong>
+                    <p className="text-muted">{new Date(alerta.fechaCreacion).toLocaleString()}</p>
                 </div>
             ))}
         </div>
