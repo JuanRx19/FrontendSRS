@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort, faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Sidebar.css"; // Archivo CSS adicional
 import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
@@ -40,6 +40,12 @@ const Sidebar = ({ onToggleSidebar }) => {
             {isExpanded && <span>Usuarios</span>}
           </div>
         </Link>
+        <Link to="/Reservas" className="link-no-style">
+          <div className="nav-item">
+            <FontAwesomeIcon icon={faCalendarCheck} />
+            {isExpanded && <span>Reservas</span>}
+          </div>
+          </Link>
         <div className="nav-item">
           <FontAwesomeIcon icon={faCog} />
           {isExpanded && <span>Configuracion</span>}
@@ -56,6 +62,8 @@ const Sidebar = ({ onToggleSidebar }) => {
         <Dropdown.Item>Salir</Dropdown.Item>
       </DropdownButton>
       </div>
+
+      
       
     </div>
   );

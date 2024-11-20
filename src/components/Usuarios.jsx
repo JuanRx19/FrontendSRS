@@ -10,6 +10,7 @@ import CreateUserModal from './CreateUserModal';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    primary: { main: "#1976d2" }, // Azul fuerte
     background: {
       default: '#121212',
       paper: '#1d1d1d',
