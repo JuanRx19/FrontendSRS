@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort, faCalendarCheck, faBell } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort, faFile, faCalendarCheck, faBell } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Sidebar.css"; // Archivo CSS adicional
 import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
@@ -33,6 +33,13 @@ const Sidebar = ({ onToggleSidebar }) => {
           
             <FontAwesomeIcon icon={faBoxArchive} />
             {isExpanded && <span>Inventario</span>}
+          </div>
+        </Link>
+        <Link to="/Reporte" className="link-no-style">
+          <div className="nav-item">
+          
+            <FontAwesomeIcon icon={faFile} />
+            {isExpanded && <span>Reportes</span>}
           </div>
         </Link>
         <Link to="/Usuarios" className="link-no-style">
