@@ -1,16 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faHome,
-    faBoxArchive,
-    faUser,
-    faCog,
-    faArrowUpWideShort,
-    faBell
-} from "@fortawesome/free-solid-svg-icons";
-import "../assets/styles/Sidebar.css";
-import { Dropdown, DropdownButton, ButtonGroup } from "react-bootstrap";
+import { faHome, faBoxArchive, faUser, faCog, faArrowUpWideShort, faCalendarCheck, faBell } from "@fortawesome/free-solid-svg-icons";
+import "../assets/styles/Sidebar.css"; // Archivo CSS adicional
+import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ onToggleSidebar }) => {
@@ -23,56 +16,64 @@ const Sidebar = ({ onToggleSidebar }) => {
 
     return (
         <div className={`sidebar ${isExpanded ? "expanded" : "collapsed"}`}>
-            {/* Botón para expandir/colapsar */}
+            {/* Botï¿½n para expandir/colapsar */}
             <div className="toggle-btn" onClick={toggleSidebar}>
                 <FontAwesomeIcon icon={faArrowUpWideShort} />
             </div>
 
-            {/* Elementos de navegación */}
-            <div className="nav-items">
-                <Link to="/Inicio" className="link-no-style">
-                    <div className="nav-item">
-                        <FontAwesomeIcon icon={faHome} />
-                        {isExpanded && <span>Inicio</span>}
-                    </div>
-                </Link>
-                <Link to="/Inventario" className="link-no-style">
-                    <div className="nav-item">
-                        <FontAwesomeIcon icon={faBoxArchive} />
-                        {isExpanded && <span>Inventario</span>}
-                    </div>
-                </Link>
-                <Link to="/Usuarios" className="link-no-style">
-                    <div className="nav-item">
-                        <FontAwesomeIcon icon={faUser} />
-                        {isExpanded && <span>Usuarios</span>}
-                    </div>
-                </Link>
-                <Link to="/Alertas" className="link-no-style">
-                    <div className="nav-item">
-                        <FontAwesomeIcon icon={faBell} />
-                        {isExpanded && <span>Alertas</span>}
-                    </div>
-                </Link>
+      <div className="nav-items">
+        <Link to="/Inicio" className="link-no-style">
+          <div className="nav-item">
+            <FontAwesomeIcon icon={faHome} />
+            {isExpanded && <span>Inicio</span>}
+          </div>
+        </Link>
+        <Link to="/Inventario" className="link-no-style">
+          <div className="nav-item">
+          
+            <FontAwesomeIcon icon={faBoxArchive} />
+            {isExpanded && <span>Inventario</span>}
+          </div>
+        </Link>
+        <Link to="/Usuarios" className="link-no-style">
+          <div className="nav-item">
+            <FontAwesomeIcon icon={faUser} />
+            {isExpanded && <span>Usuarios</span>}
+          </div>
+        </Link>
+        <Link to="/Reservas" className="link-no-style">
+          <div className="nav-item">
+            <FontAwesomeIcon icon={faCalendarCheck} />
+            {isExpanded && <span>Reservas</span>}
+          </div>
+        </Link>
+        <Link to="/Alertas" className="link-no-style">
+            <div className="nav-item">
+                <FontAwesomeIcon icon={faBell} />
+                {isExpanded && <span>Alertas</span>}
             </div>
-
-            <div className="nav-leave">
-                <DropdownButton
-                    as={ButtonGroup}
-                    title={
-                        <FontAwesomeIcon
-                            icon={faCog}
-                            style={{ color: "white", fontSize: "1.5rem" }}
-                        />
-                    }
-                    id="bg-nested-dropdown"
-                    variant="none"
-                >
-                    <Dropdown.Item>Salir</Dropdown.Item>
-                </DropdownButton>
-            </div>
+        </Link>
+        <div className="nav-item">
+          <FontAwesomeIcon icon={faCog} />
+          {isExpanded && <span>Configuracion</span>}
         </div>
-    );
+      </div>
+
+      <div className="nav-leave">
+        <DropdownButton
+          as={ButtonGroup}
+          title={<FontAwesomeIcon icon={faCog} style={{ color: 'white', fontSize: '1.5rem'}} />}
+          id="bg-nested-dropdown"
+          variant="none"
+        >
+        <Dropdown.Item>Salir</Dropdown.Item>
+      </DropdownButton>
+      </div>
+
+      
+      
+    </div>
+  );
 };
 
 Sidebar.propTypes = {
