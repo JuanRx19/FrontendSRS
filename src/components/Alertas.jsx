@@ -48,7 +48,6 @@ const Alertas = () => {
 
     return (
         <div className="container mt-5">
-            <h2 className="alertas-title">Alertas</h2>
 
             {/* Boton para simular bateria baja */}
             <button
