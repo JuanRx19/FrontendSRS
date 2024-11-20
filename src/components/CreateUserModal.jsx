@@ -1,21 +1,20 @@
 import { TextField, Button, Modal, Box, Typography, MenuItem, FormControl, InputLabel, Select } from '@mui/material';
 import { toast } from 'sonner';
 import { useState } from 'react';
+import axios from 'axios';
 
 const CreateUserModal = ({ open, handleClose }) => {
   const [formData, setFormData] = useState({
-    usuarioId: "",
     nombre: "",
     email: "",
     password: "",
     rolId: "",
-    fechaRegistro: new Date().toISOString().slice(0, 10), // Fecha actual en formato YYYY-MM-DD
   });
 
   // Simulación de datos para los roles
   const roles = [
     { id: 1, name: "Administrador" },
-    { id: 2, name: "Usuario" },
+    { id: 2, name: "Operario" },
     { id: 3, name: "Invitado" },
   ];
 
@@ -27,12 +26,13 @@ const CreateUserModal = ({ open, handleClose }) => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!formData.nombre || !formData.email || !formData.password || !formData.rolId) {
       toast.error("Por favor, completa todos los campos.");
       return;
     }
     console.log("Usuario creado:", formData);
+    await axios.post("http://localhost:5108/api/Usuarios/CreateUsuario", formData);
     toast.success("Usuario creado con éxito");
     handleClose(); // Cierra el modal
   };

@@ -11,11 +11,13 @@ import {
 } from "@mui/material";
 import { toast } from "sonner";
 import { useState } from "react";
+import axios from "axios";
 
 const CreateDeviceModal = ({ open, handleClose }) => {
   const [formData, setFormData] = useState({
     nombre: "",
-    ubicacionActual: "",
+    ubicacion: "",
+    bateria: 100,
     tipo: "",
   });
 
@@ -29,12 +31,13 @@ const CreateDeviceModal = ({ open, handleClose }) => {
     }));
   };
 
-  const handleSubmit = () => {
-    if (!formData.nombre || !formData.ubicacionActual || !formData.tipo) {
+  const handleSubmit = async () => {
+    if (!formData.nombre || !formData.ubicacion || !formData.tipo || !formData.bateria) {
       toast.error("Por favor, completa todos los campos.");
       return;
     }
     console.log("Dispositivo creado:", formData);
+    await axios.post("http://localhost:5108/api/Inventario/AgregarDispositivo", formData);
     toast.success("Dispositivo creado con éxito");
     handleClose(); // Cierra el modal
   };
@@ -72,8 +75,18 @@ const CreateDeviceModal = ({ open, handleClose }) => {
         <TextField
           fullWidth
           label="Ubicación"
-          name="ubicacionActual"
-          value={formData.ubicacionActual}
+          name="ubicacion"
+          value={formData.ubicacion}
+          onChange={handleChange}
+          margin="normal"
+        />
+
+        {/* Campo Bateria */}
+        <TextField
+          fullWidth
+          label="Bateria"
+          name="bateria"
+          value={formData.bateria}
           onChange={handleChange}
           margin="normal"
         />
