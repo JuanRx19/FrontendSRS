@@ -1,0 +1,55 @@
+.tabla-reservas {
+    background-color: #1e1e1e;
+    width: 95%;
+    color: #f0f0f0;
+    border-collapse: collapse;
+}
+
+.tabla-reservas thead {
+    background-color: #444;
+    color: #f0f0f0;
+    height: 40px;
+}
+
+.tabla-reservas thead .numero {
+    width: 70px;
+}
+
+.tabla-reservas thead tr {
+    text-align: center;
+    border-left: 1px solid #333;
+}
+
+.tabla-reservas thead th {
+    padding: 10px;
+    border-bottom: 2px solid #555;
+}
+
+.tabla-reservas tbody tr:nth-child(even) {
+    background-color: #2e2e2e;
+}
+
+.tabla-reservas tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+.tabla-reservas tbody td {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    color: #f0f0f0;
+}
+
+.botonDescargar {
+    border: 0;
+    border-radius: 10px;
+    background-color: #555;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonDescargar:hover {
+    background-color: #666;
+}

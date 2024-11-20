@@ -12,6 +12,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import api from './../Scripts/api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -20,10 +21,9 @@ const Login = () => {
 
   
   const leerDatos = async () => {
-    const endpoint = 'http://localhost:5108/api/Usuarios/VerificarInicioSesion';
 
     try {
-      const response = await axios.post(endpoint, {
+      const response = await api.post('/Autenticacion/login', {
         email: email,
         password: password,
       }, {
