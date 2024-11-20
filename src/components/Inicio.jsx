@@ -63,14 +63,6 @@ const Inicio = ({ contentComponent: ContentComponent, nameComponent: NameCompone
               <h2>{NameComponent}</h2>
               <p>{currentDateTime}</p>
             </Col>
-            <Col className="text-end">
-              <span>Tatiana Herwitz</span>
-              <img
-                src="https://via.placeholder.com/40"
-                alt="User"
-                className="rounded-circle ms-2"
-              />
-            </Col>
           </Row>
 
 
