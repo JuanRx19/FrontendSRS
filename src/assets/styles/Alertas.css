@@ -1,0 +1,56 @@
+.alertas-title {
+    color: white; /* Cambia el color a blanco */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+}
+
+/* Estilos para la notificación */
+.notificacion {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #721c24;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .close-btn:hover {
+        color: #f00;
+    }
+
+/* Estilos para el botón de bateria baja */
+.btn-bateria {
+    background-color: #ffc107; /* Amarillo */
+    color: white;
+    margin-right: 15px; /* Separación entre botones */
+}
+
+    .btn-bateria:hover {
+        background-color: #e0a800; /* Color más oscuro al pasar el ratón */
+    }
+
+/* Estilos para el botón de clima lluvioso */
+.btn-lluvia {
+    background-color: #004085; /* Azul oscuro */
+    color: white;
+    margin-left: 15px; /* Separación entre botones */
+}
+
+    .btn-lluvia:hover {
+        background-color: #003366; /* Azul más oscuro al pasar el ratón */
+    }
