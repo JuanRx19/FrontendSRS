@@ -53,10 +53,6 @@ const Sidebar = ({ onToggleSidebar }) => {
                 {isExpanded && <span>Alertas</span>}
             </div>
         </Link>
-        <div className="nav-item">
-          <FontAwesomeIcon icon={faCog} />
-          {isExpanded && <span>Configuracion</span>}
-        </div>
       </div>
 
       <div className="nav-leave">
