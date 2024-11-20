@@ -37,7 +37,7 @@ const Login = () => {
       // Manejo de la respuesta según tu lógica
       if (response.data.exito) { // Ajusta según la respuesta real de tu backend
         alert('Inicio de sesión exitoso');
-        navigate('/Dashboard');
+        navigate('/Inicio');
 
       } else {
         alert('Credenciales inválidas');

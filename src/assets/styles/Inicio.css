@@ -29,3 +29,7 @@
   flex-grow: 1;
   padding: 30px; /* Opcional: Padding interno para el contenido */
 }
+
+.titulo-inicial, .text-end{
+  color: #4f4f4f;
+}
